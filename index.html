@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Traversing</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="text-center m-3" id="inicio">Traversing</h1>
+      <ol class="list-group list-group-numbered">
+        <li class="list-group-item ejercicio">
+          Cambio de Color al Pasar el Ratón: Selecciona varios elementos en tu
+          página y cambia su color cuando el usuario pasa el ratón sobre ellos.
+          Restaura el color original cuando el ratón sale del elemento.
+        </li>
+        <li class="list-group-item ejercicio">
+          Creación de una Lista Dinámica: Crea una lista (&lt;ul&gt o
+          &lt;ol&gt;) dinámicamente utilizando JavaScript. Permite que los
+          usuarios agreguen elementos a la lista mediante un formulario.
+        </li>
+        <li class="list-group-item ejercicio">
+          Eliminación de Elementos: Selecciona un conjunto de elementos y
+          proporciona la capacidad de eliminarlos al hacer clic en un botón.
+        </li>
+        <li class="list-group-item ejercicio">
+          Desplazamiento Suave a un Elemento: Crea un menú de navegación y
+          utiliza JavaScript para permitir un desplazamiento suave hacia la
+          sección correspondiente al hacer clic en un enlace del menú.
+        </li>
+        <li class="list-group-item ejercicio">
+          Validación de Formulario en Tiempo Real: Implementa la validación de
+          formularios en tiempo real utilizando eventos y mensajes de error
+          dinámicos.
+        </li>
+        <li class="list-group-item ejercicio">
+          Toggle de Clase al Hacer Clic: Selecciona un conjunto de elementos y
+          aplica un efecto de "toggle" al hacer clic en ellos, como cambiar su
+          fondo o bordes.
+        </li>
+        <li class="list-group-item ejercicio">
+          Búsqueda y Resaltado de Texto: Crea un campo de búsqueda que permita a
+          los usuarios buscar y resaltar texto en la página.
+        </li>
+        <li class="list-group-item ejercicio">
+          Galería de Imágenes con Navegación: Construye una galería de imágenes
+          con botones de navegación. Permite que los usuarios pasen de una
+          imagen a otra sin recargar la página.
+        </li>
+        <li class="list-group-item ejercicio">
+          Árbol de Contenidos Interactivo: Utiliza la estructura de árbol del
+          DOM para crear un árbol de contenidos interactivo. Permite expandir y
+          contraer secciones.
+        </li>
+        <li class="list-group-item ejercicio">
+          Actualización de Contenido en Tiempo Real: Utiliza JavaScript para
+          actualizar dinámicamente el contenido de tu página en tiempo real,
+          como mostrar la hora actualizada sin necesidad de recargar.
+        </li>
+      </ol>
+      <hr />
+      <h4 class="text-center m-3 tituloEjercicios">Lista dinamica</h4>
+      <div class="contenido">
+        <ol id="respuesta2"></ol>
+        <form>
+          <div class="form-floating col">
+            <input
+              type="text"
+              name="txt-add-list"
+              id="txt-add-list"
+              class="form-control"
+            />
+            <label for="txt-add-list"
+              >Escriba el elemento a agregar a la lista</label
+            >
+          </div>
+          <div class="row row-cols-auto">
+            <div class="col">
+              <button class="btn btn-primary m-3" id="btn-add-list">
+                Agregar
+              </button>
+            </div>
+            <div class="col">
+              <button class="btn btn-danger m-3" id="btn-remove-list">
+                Borrar
+              </button>
+            </div>
+            <div class="col">
+              <button class="btn btn-danger m-3" id="btn-remove-all">
+                Borrar Todo
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <hr />
+      <h4 class="text-center m-3 tituloEjercicios">
+        Validacion de formulario en tiempo real
+      </h4>
+      <div class="contenido">
+        <form>
+          <div class="form-floating m-3">
+            <input
+              type="text"
+              name="txtName"
+              id="txtName"
+              class="form-control"
+            />
+            <label for="txtName">Nombre</label>
+            <span class="error-message" id="nameError"></span>
+          </div>
+          <div class="form-floating m-3">
+            <input type="email" id="email" name="email" class="form-control" />
+            <label for="email">Correo electrónico:</label>
+            <span class="error-message" id="emailError"></span>
+          </div>
+        </form>
+      </div>
+
+      <hr />
+
+      <h4 class="text-center m-3 tituloEjercicios">
+        Toggle de clase al hacer click
+      </h4>
+
+      <div class="contenido">
+        <button class="btn btn-outline-danger" id="cambiarFondo">
+          Cambiar color de titulos
+        </button>
+      </div>
+
+      <hr />
+
+      <h4 class="text-center m-3 tituloEjercicios">Busqueda</h4>
+
+      <div class="contenido">
+        <input
+          type="search"
+          name="busqueda"
+          id="busqueda"
+          class="form-control"
+        />
+        <button class="btn btn-outline-success m-3" id="btnBuscar">
+          Buscar
+        </button>
+      </div>
+
+      <hr />
+
+      <h4 class="text-center m-3 tituloEjercicios">
+        Galeria de imagenes con navegacion
+      </h4>
+
+      <div class="contenido">
+        <div class="row">
+          <div class="col">
+            <img
+              src="./img/paisaje1.png"
+              alt="paisaje 1"
+              class="img-thumbnail"
+            />
+          </div>
+          <div class="col">
+            <img
+              src="./img/paisaje2.png"
+              alt="paisaje 2"
+              class="img-thumbnail"
+            />
+          </div>
+          <div class="col">
+            <img
+              src="./img/paisaje3.png"
+              alt="paisaje 3"
+              class="img-thumbnail"
+            />
+          </div>
+          <div class="col">
+            <img
+              src="./img/paisaje4.png"
+              alt="paisaje 4"
+              class="img-thumbnail"
+            />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-1">
+            <button class="btn btn-outline-primary" id="btnPrevious">
+              Anterior
+            </button>
+          </div>
+          <div class="col-10">
+            <img src="" alt="" id="imgnPrincipal" class="img-fluid" />
+          </div>
+          <div class="col-1">
+            <button class="btn btn-outline-primary" id="btnNext">
+              Siguiente
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <hr />
+
+      <h4 class="text-center m-3 tituloEjercicios">Hora actual</h4>
+      <div class="contenido d-flex justify-content-center">
+        <h3
+          id="reloj"
+          class="text-center m-3 text-bg-dark p-3 rounded rounded-5"
+        ></h3>
+      </div>
+      <h4 class="text-center m-3 tituloEjercicios">Desplazamiento suave al principio</h4>
+      <div class="contenido d-flex justify-content-center">
+        <a href="#inicio" class="btn btn-warning m-3" id="regresarInicio">Regresar suave al inicio</a>
+      </div>
+    </div>
+    <script src="/js/app.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
